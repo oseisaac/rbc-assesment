@@ -1,5 +1,3 @@
-
-
 (function () {
     function getQueryParam(name) {
         const url = new URL(window.location.href);
@@ -14,9 +12,9 @@
         localStorage.setItem(AB_KEY, abGroup);
     }
 
-    const heroTitle = document.getElementById('hero-title');
-    const heroSubtitle = document.getElementById('hero-subtitle');
-    const heroCTA = document.getElementById('hero-cta');
+    const heroTitle = document.querySelector('.rbc-offer-title');
+    const heroSubtitle = document.querySelector('.rbc-offer-sub');
+    const heroCTA = document.querySelector('.rbc-offer-btn');
 
     const segmentMessages = {
         student: {
