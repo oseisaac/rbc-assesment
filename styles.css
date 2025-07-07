@@ -1,0 +1,401 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, "Segoe UI", sans-serif;
+  background: #fff;
+  color: #003087;
+}
+a {
+  color: #006ac3;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+button,
+.btn {
+  background: #006ac3;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Top bar */
+.rbc-top-bar {
+  background: #0053a0;
+  color: #fff;
+  font-size: 15px;
+  padding: 0 0 0 0;
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rbc-top-links {
+  display: flex;
+  gap: 24px;
+  margin-left: 12px;
+  font-size: 14px;
+}
+.rbc-top-links a {
+  color: #fff;
+  font-weight: 400;
+}
+.rbc-top-right {
+  margin-right: 18px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.rbc-dot {
+  color: #ffd600;
+  font-size: 1.2em;
+  margin-right: 4px;
+}
+
+/* Main header */
+.rbc-header {
+  background: #0053a0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 0;
+  height: 64px;
+}
+.rbc-header-left {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+}
+.rbc-logo {
+  height: 48px;
+  margin-right: 12px;
+}
+.rbc-title {
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.rbc-header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.rbc-search {
+  width: 340px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  background: #f4f6fa;
+  font-size: 1rem;
+  outline: none;
+}
+.rbc-header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-right: 24px;
+}
+.rbc-contact {
+  color: #fff;
+  font-size: 1rem;
+}
+.rbc-lang {
+  color: #fff;
+  font-size: 1rem;
+}
+.rbc-signin {
+  background: #ffd600;
+  color: #003087;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 8px 22px;
+  border: none;
+  font-size: 1rem;
+  margin-left: 10px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: background 0.2s;
+}
+.rbc-signin:hover {
+  background: #ffe066;
+}
+
+/* Nav bar */
+.rbc-nav {
+  background: #0053a0;
+  border-bottom: 1px solid #e5e5e5;
+  padding-left: 180px;
+  min-height: 40px;
+}
+.rbc-nav ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.08rem;
+}
+.rbc-nav li {
+  padding: 0;
+}
+.rbc-nav a {
+  color: #fff;
+  font-weight: 500;
+  padding: 12px 0 10px 0;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  transition: border 0.2s;
+}
+.rbc-nav a:hover,
+.rbc-nav a:focus {
+  border-bottom: 2px solid #ffd600;
+  color: #ffd600;
+}
+
+/* Offer section */
+.rbc-main {
+  margin-top: 36px;
+}
+.rbc-offer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 320px;
+  margin-bottom: 32px;
+}
+.rbc-offer-left {
+  max-width: 600px;
+}
+.rbc-offer-badge {
+  background: #ffd600;
+  color: #003087;
+  font-weight: bold;
+  font-size: 13px;
+  display: inline-block;
+  padding: 3px 12px 2px 12px;
+  border-radius: 3px;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+.rbc-offer-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.1;
+  color: #0053a0;
+}
+.rbc-offer-sub {
+  font-size: 1.35rem;
+  color: #222;
+  margin-bottom: 18px;
+}
+.rbc-offer-details {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rbc-offer-info-icon {
+  color: #006ac3;
+  font-size: 1.1em;
+  font-style: normal;
+}
+.rbc-offer-btn {
+  background: #006ac3;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.rbc-offer-btn:hover {
+  background: #0053a0;
+}
+.rbc-offer-right {
+  min-width: 260px;
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rbc-ipad-img {
+  max-width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  background: #eee;
+  height: 180px;
+  object-fit: contain;
+}
+
+/* Info cards */
+.rbc-cards {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+.rbc-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  flex: 1;
+  padding: 32px 24px 28px 24px;
+  min-width: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+.rbc-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #003087;
+}
+.rbc-card-desc {
+  font-size: 1.05rem;
+  color: #222;
+  margin-bottom: 12px;
+}
+.rbc-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 1.05rem;
+}
+.rbc-card-list a {
+  color: #006ac3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.rbc-card-list a:hover {
+  color: #003087;
+}
+.rbc-card-viewall,
+.rbc-card-learnmore {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #006ac3;
+  align-self: flex-end;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+.rbc-card-viewall span,
+.rbc-card-learnmore span {
+  font-size: 1.1em;
+  margin-left: 2px;
+}
+.rbc-card-viewall:hover,
+.rbc-card-learnmore:hover {
+  color: #003087;
+}
+.rbc-card-benefits {
+  margin-top: 18px;
+  font-weight: 500;
+  color: #003087;
+  font-size: 1.05rem;
+}
+.rbc-app-icon {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 10px;
+  align-self: center;
+}
+.rbc-app-title {
+  font-weight: 500;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  color: #003087;
+  align-self: center;
+}
+.rbc-app-desc {
+  color: #222;
+  font-size: 1.01rem;
+  margin-bottom: 18px;
+  align-self: center;
+  text-align: center;
+}
+
+/* Feedback tab */
+.rbc-feedback {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #006ac3;
+  color: #fff;
+  padding: 12px 8px;
+  border-radius: 6px 0 0 6px;
+  writing-mode: vertical-rl;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .rbc-offer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .rbc-offer-right {
+    margin: 32px 0 0 0;
+  }
+  .rbc-cards {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .rbc-header,
+  .rbc-nav {
+    flex-direction: column;
+    padding: 12px 0;
+  }
+  .rbc-header-center {
+    margin: 12px 0;
+  }
+  .container {
+    padding: 0 8px;
+  }
+  .rbc-offer-title {
+    font-size: 2rem;
+  }
+}

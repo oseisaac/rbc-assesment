@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Query Parameter Testing</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .test-section {
+        background: white;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .test-link {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 15px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      .test-link:hover {
+        background: #0056b3;
+      }
+      .info-box {
+        background: #e7f3ff;
+        border: 1px solid #b3d9ff;
+        padding: 15px;
+        border-radius: 4px;
+        margin: 15px 0;
+      }
+      .code-block {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        padding: 10px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 12px;
+        overflow-x: auto;
+      }
+      .current-url {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        padding: 10px;
+        border-radius: 4px;
+        margin: 10px 0;
+        font-family: monospace;
+      }
+      .clear-storage {
+        background: #dc3545;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 10px 0;
+      }
+      .clear-storage:hover {
+        background: #c82333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>RBC A/B Test - Query Parameter Testing</h1>
+
+    <div class="test-section">
+      <h2>Current URL</h2>
+      <div class="current-url" id="current-url"></div>
+
+      <h3>Current A/B Group</h3>
+      <div id="current-ab-group"></div>
+
+      <button class="clear-storage" onclick="clearABStorage()">Clear A/B Group Storage</button>
+    </div>
+
+    <div class="test-section">
+      <h2>Test Different Segments</h2>
+      <p>Click these links to test different segment parameters:</p>
+
+      <a href="index.html" class="test-link">No Segment (Default)</a>
+      <a href="index.html?segment=student" class="test-link">Student Segment</a>
+      <a href="index.html?segment=newcomer" class="test-link">Newcomer Segment</a>
+      <a href="index.html?segment=invalid" class="test-link">Invalid Segment</a>
+    </div>
+
+    <div class="test-section">
+      <h2>Test A/B Groups</h2>
+      <p>
+        To test different A/B groups, clear storage and refresh multiple times, or manually set:
+      </p>
+
+      <button class="clear-storage" onclick="setABGroup('A')">Force Group A</button>
+      <button class="clear-storage" onclick="setABGroup('B')">Force Group B</button>
+    </div>
+
+    <div class="test-section">
+      <h2>Combined Testing</h2>
+      <p>Test combinations of A/B groups and segments:</p>
+
+      <a href="index.html?segment=student" class="test-link">Student + Random A/B</a>
+      <a href="index.html?segment=newcomer" class="test-link">Newcomer + Random A/B</a>
+    </div>
+
+    <div class="info-box">
+      <h3>How the Logic Works:</h3>
+      <ol>
+        <li>
+          <strong>Query Parameter Reading:</strong> The script reads the
+          <code>segment</code> parameter from the URL
+        </li>
+        <li>
+          <strong>A/B Assignment:</strong> Randomly assigns A or B group, persists in localStorage
+        </li>
+        <li>
+          <strong>Content Personalization:</strong> Only applies personalized content when:
+          <ul>
+            <li>A/B group is 'B' AND</li>
+            <li>A valid segment is provided in the URL</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <div class="info-box">
+      <h3>Expected Behavior:</h3>
+      <div class="code-block">
+        Group A + Any Segment: Default content Group B + No Segment: Default content Group B +
+        Student Segment: "Open an RBC Student Chequing Account and Get the New iPad for School"
+        Group B + Newcomer Segment: "Open an RBC Newcomer Account and Get the New iPad to Start Your
+        Journey" Group B + Invalid Segment: Default content
+      </div>
+    </div>
+
+    <div class="test-section">
+      <h2>Manual URL Testing</h2>
+      <p>You can also manually edit the URL in your browser:</p>
+      <div class="code-block">
+        index.html?segment=student index.html?segment=newcomer
+        index.html?segment=student&other=param
+      </div>
+    </div>
+
+    <script>
+      // Display current URL and A/B group
+      function updateDisplay() {
+        document.getElementById("current-url").textContent = window.location.href;
+
+        const abGroup = localStorage.getItem("rbc-ab-group");
+        document.getElementById("current-ab-group").textContent = abGroup
+          ? `Group ${abGroup}`
+          : "No group assigned yet";
+      }
+
+      function clearABStorage() {
+        localStorage.removeItem("rbc-ab-group");
+        updateDisplay();
+        alert("A/B group storage cleared! Refresh the main page to get a new random assignment.");
+      }
+
+      function setABGroup(group) {
+        localStorage.setItem("rbc-ab-group", group);
+        updateDisplay();
+        alert(`A/B group set to ${group}!`);
+      }
+
+      // Update display on page load
+      updateDisplay();
+    </script>
+  </body>
+</html>
